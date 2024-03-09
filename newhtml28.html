@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit this template
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head><center>
+    <body>
+       <form id="myForm">
+           Name*: <input type="text" id="name" name="name"><br><br>
+  Address: <input type="text" id="address" name="address"><br><br>
+  Zip Code*: <input type="text" id="zipCode" name="zipCode"><br><br>
+ Country*: <select id="country" name="country">
+    <option value="">Please select the country</option>
+    <option value="India">India</option>
+    <option value="US">US</option>
+    <option value="UK">UK</option>
+    <option value="Canada">Canada</option>
+    <option value="Australia">Australia</option>
+ </select><br><br>
+  Gender*: <input type="radio" id="male" name="gender" value="male">
+    <label for="male">Male</label>
+  <input type="radio" id="female" name="gender" value="female">
+    <label for="female">Female</label><br><br>
+  Preferences*: <input type="radio" id="red" name="preferences" value="red">
+    <label for="red">Red</label>
+  <input type="radio" id="green" name="preferences" value="green">
+    <label for="green">Green</label>
+  <input type="radio" id="blue" name="preferences" value="blue">
+    <label for="blue">Blue</label><br><br>
+  Phone*: <input type="text" id="phone" name="phone"><br><br>
+  Email*: <input type="text" id="email" name="email"><br><br>
+  password (6-8 characters)*: <input type="password" id="password" name="password"><br><br>
+  Verify password*: <input type="password" id="verifyPassword" name="verifyPassword"><br><br>
+  <input type="button" onclick="validateForm()" value="SEND">
+  <input type="button" onclick="clearForm()" value="CLEAR">
+</form>
+
+<script>
+function validateForm() {
+  // Get form elements
+  var name = document.forms["myForm"]["name"];
+  var zipCode = document.forms["myForm"]["zipCode"];
+  var country = document.forms["myForm"]["country"];
+  var gender = document.forms["myForm"]["gender"];
+  var preferences = document.forms["myForm"]["preferences"];
+  var phone = document.forms["myForm"]["phone"];
+  var email = document.forms["myForm"]["email"];
+  var password = document.forms["myForm"]["password"];
+  var verifyPassword = document.forms["myForm"]["verifyPassword"];
+
+  // Validate name
+  if (name.value === "") {
+    alert("Please enter your name!");
+    name.focus();
+    return false;
+  }
+
+  // Validate zipCode
+  if (zipCode.value === "") {
+    alert("Please enter your zip code!");
+    zipCode.focus();
+    return false;
+  }
+
+  // Validate country
+ if (country.value === "") {
+    alert("Please select your country!");
+    country.focus();
+    return false;
+  }
+
+
+  // Validate gender
+  
+  if (gender.value === "") {
+    alert("Please select your gender!");
+    gender[0].focus();
+    return false;
+  }
+
+  // Validate preferences
+  if (preferences.value === "") {
+    alert("Please select your preferences!");
+    preferences[0].focus();
+    return false;
+  }
+
+  // Validate phone
+  if (phone.value === "") {
+    alert("Please enter your phone!");
+    phone.focus();
+    return false;
+  }
+
+  // Validate email
+  if (email.value === "") {
+    alert("Please enter your email!");
+    email.focus();
+    return false;
+  }
+
+  // Validate password
+  if (password.value === "") {
+    alert("Please enter your password!");
+    password.focus();
+    return false;
+  }
+
+  // Validate password length
+  if (password.value.length < 6 || password.value.length > 8) {
+    alert("Password must be between 6 and 8 characters long!");
+    password.focus();
+    return false;
+  }
+
+  // Validate verifyPassword
+  if (verifyPassword.value === "") {
+    alert("Please verify your password!");
+    verifyPassword.focus();
+    return false;
+  }
+
+  // Validate verifyPassword equality
+  if (password.value !== verifyPassword.value) {
+    alert("Passwords do not match!");
+    password.focus();
+    return false;
+  }
+
+  // If all validations pass, submit the form
+  alert("Form submitted successfully!");
+  return true;
+}
+
+function clearForm() {
+  // Clear all form elements
+  document.getElementById("myForm").reset();
+}
+</script>
+
+</body>
+
+    </center>
+    
+</html>
